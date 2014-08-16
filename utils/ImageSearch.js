@@ -5,7 +5,7 @@ var _ = require('lodash');
 var ImageSearch = function() {
   this.customSearch = google.customsearch('v1');
   this.cseID = '013109986887887045181:ej5w9mhynls';
-  this.API_KEY = 'AIzaSyB-TKHMkjF3OmpnPXD4463Xk3ZJBNIxREs';
+  this.API_KEY = process.env.GOOGLE_API_KEY;
 };
 
 ImageSearch.prototype = {
