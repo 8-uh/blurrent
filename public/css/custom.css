@@ -1,3 +1,15 @@
+.stButton .stMainServices {
+  height: 25px !important;
+}
+
+.stButton .stButton_gradient {
+  height: 25px !important;
+}
+
+.stButton .stBubble_count {
+  padding-top: 5px !important;
+}
+
 img.article-heading {
   overflow: hidden;
   max-height: 355px;
@@ -6,6 +18,17 @@ img.bullet {
   max-height: 400px;
   text-align: center;
   clear: both;
+}
+
+
+
+.top-share { 
+  margin-top: 10px;
+}
+
+.info-ftr {
+  padding: 0px 0;
+  border-top: 2px solid #f45131;
 }
 
 .flexslider .slides img {
@@ -22,6 +45,79 @@ background-color: #cccccc;
 height: 475px;
 }
 
+.mid-block-1 img, .mid-block-2 img {
+  max-width: 391px;
+  max-height: 231px;
+  height: 231px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.top-big-two > .boxgrid3 img {
+  max-width: 367px;
+  max-height: 269px;
+  height: 269px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+.tn-small-1 img {
+  max-width: 107px;
+  max-height: 85px;
+  height: 85px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.trend-1 img {
+
+  max-width: 370px;
+  max-height: 250px;
+  height: 250px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.trend-sm img {
+
+  max-width: 107px;
+  max-height: 85px;
+  height: 85px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+.tn-small-1 h4 {
+  font-size: 10px;
+}
+
+.big-two-1.boxgrid3 h3 a, .big-two-2.boxgrid3 h3 a {
+max-height: 40px;
+}
+
+.rt-block img {
+  max-width: 289px;
+  max-height: 475px;
+  height: 475px;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
 .logo a {
   font-size: 64px;
   font-variant: small-caps;

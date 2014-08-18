@@ -18,19 +18,16 @@ ImageService.prototype = {
     var key = slang.dasherize(query.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,""));
     var imageList = images.get(key);
     if(imageList) {
-      console.log('image list exists');
       deferred.resolve(_.first(_.shuffle(imageList), numberOfImages + 1));
     } else {
-      console.log('image list does not exist');
       imageList = _.map(_.range(0, 31), function() {
         return this.dummy;
       }, this);
-      console.log('setting image list to:', key);
       deferred.resolve(_.first(imageList, numberOfImages + 1));  
     }
     return deferred.promise;
   },
-  getImages: function(query, numberOfImages) {
+  query: function(query, numberOfImages) {
     query = query || 'puppies';
     var key = slang.dasherize(query.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g,""));
     numberOfImages = numberOfImages || 10;
@@ -39,13 +36,8 @@ ImageService.prototype = {
     if(imageList) {
       deferred.resolve(_.first(_.shuffle(imageList), numberOfImages + 1));
     } else {
-      var que = [];
-      for(var i = 0; i < 3; i++) {
-        que.push(this.$get(query, (i * 10) + 1));
-      }
-      Q.all(que).then(function(imgs) {
-        images.set(key, _.flatten(imgs));
-        deferred.resolve(_.first(_.flatten(imgs), numberOfImages + 1));
+      this.dummyImages(query,numberOfImages).then(function(images) {
+        deferred.resolve(images);
       });
     }
     return deferred.promise;
@@ -63,7 +55,6 @@ ImageService.prototype = {
           console.log('An error occured', err);
           deferred.reject(new Error(err));
         } else {
-          console.log('query ran:', startItem);
           deferred.resolve(resp.items);
         }
     });
