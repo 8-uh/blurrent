@@ -39,6 +39,9 @@ ArticleService.getRandom = function(numArticles, tag) {
     }
     console.log('count:', count);
     var rand = Math.floor(Math.random() * count);
+    if(rand + numArticles > count) {
+      rand = count - numArticles - rand;
+    }
     Article.find({})
     .where({tags:tag})
     .limit(numArticles)
