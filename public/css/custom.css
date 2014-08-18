@@ -1,0 +1,38 @@
+img.article-heading {
+  overflow: hidden;
+  max-height: 355px;
+}
+img.bullet {
+  max-height: 400px;
+  text-align: center;
+  clear: both;
+}
+
+.flexslider .slides img {
+width: auto;
+display: block;
+max-height: 475px;
+max-width: 464px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+background-color: #cccccc;
+height: 475px;
+}
+
+.logo a {
+  font-size: 64px;
+  font-variant: small-caps;
+  color: #f45131;
+  font-weight: bold;
+  font-style: italic;
+}
+.logo a:hover {
+  text-decoration: none;
+}
+
+.boxgrid.caption h3 a, .boxgrid2.caption h3 a {
+  font-size: 20px;
+}

@@ -1,0 +1,61 @@
+//Home Slider and Big news blocks 
+.container
+  .main-news-blks
+    .hm-slider-cont
+      //
+         News slider 
+      .flex-container
+        .flexslider.hm-slider
+          ul.slides
+            each article in sliderArticles
+              li
+                img(alt='', src='#{article.image.link}')
+                h3.cat-label.cat-label1
+                  a(href='#') NEWS
+                .hm-sldr-caption
+                  h3
+                    a(href='/article/#{article.slug}')= article.title
+                      span.topic-icn 17
+    //
+       Fixed Blocks 
+    .mid-blks-cont
+      //
+         Block1 
+      .mid-block-1.boxgrid.caption
+        img(alt='', src='#{articles[0].image.link}')
+        h4.cat-label.cat-label2
+          a(href='#') GAMES
+        .cover.boxcaption
+          h3
+            a(href='/article/#{articles[0].slug}') #{articles[0].title}
+            span.topic-icn 81
+          a(href='/article/#{articles[0].slug}')
+            | MORE
+            i.fa.fa-angle-double-right
+      //
+         Block2 
+      .mid-block-2.boxgrid.caption
+        img(alt='', src='#{articles[1].image.link}')
+        h4.cat-label.cat-label3
+          a(href='/article/#{articles[1].slug}') TOURISM
+        .cover.boxcaption
+          h3
+            a(href='#single.html') #{articles[1].title}
+            span.topic-icn 36
+          a(href='/article/#{articles[1].slug}')
+            | MORE
+            i.fa.fa-angle-double-right
+    //
+       Block3 
+    .rt-bk-cont
+      .rt-block.boxgrid2.caption
+        img(alt='', src='#{articles[2].image.link}')
+        h4.cat-label.cat-label4
+          a(href='#') MUSIC
+        .cover.boxcaption2
+          h3
+            a(href='/article/#{articles[2].slug}') #{articles[2].title}
+            span.topic-icn 98
+          a(href='/article/#{articles[1].slug}')
+            | MORE
+            i.fa.fa-angle-double-right

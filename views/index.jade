@@ -1,7 +1,389 @@
 extends layout
 
 block content
-  h1= title
-  each bullet, index in bullets
-    h3= (index + 1) + '. ' + bullet.text
-    img.img-rounded.img-responsive.img-placeholder(data-src="#{bullet.image.link}")
+  include home-slider.jade
+  .container
+    .main-left-side
+      //
+       Top News Section 
+      .top-news.float-width
+        .float-width.sec-cont
+          h3.sec-title Top news
+          .top-big-two
+            .big-two-1.blocky.boxgrid3.caption
+              img(alt='', src='/img/samples/sample4.jpg')
+              .cover.boxcaption3
+                h3
+                  a(href='#single.html') Red hair just coming back to fashion
+                p.artcl-time-1
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 21 comments
+                p
+                  | Curabitur fringilla porttitor porta. Vivamus vel nulla ullamcorper, fringilla ligula nec, pellentesque nisl. Sed dol...
+            .big-two-2.blocky.boxgrid3.caption
+              img(alt='', src='/img/samples/sample5.jpg')
+              .cover.boxcaption3
+                h3
+                  a(href='#single.html') Arrows will be allowed in Olympic Sport
+                p.artcl-time-1
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 13 comments
+                p
+                  | Curabitur fringilla porttitor porta. Vivamus vel nulla ullamcorper, fringilla ligula nec, pellentesque nisl. Sed dol...
+        .tn-small-1.blocky
+          a(href='#')
+            img.lefty(alt='', src='/img/samples/e1.jpg')
+          h4.lefty After party of Blondi Concert will begin tomorrow
+          a.lefty.cat-a.cat-label4(href='#') MUSIC
+          p.righty
+            span
+              i.fa.fa-clock-o
+              | 20 Jan 2014
+        .tn-small-1.blocky
+          a(href='#')
+            img.lefty(alt='', src='/img/samples/e2.jpg')
+          h4.lefty USA Games Studio will release sandbox new game
+          a.lefty.cat-a.cat-label2(href='#') GAMES
+          p.righty
+            span
+              i.fa.fa-clock-o
+              | 20 Jan 2014
+        .tn-small-1.blocky
+          a(href='#')
+            img.lefty(alt='', src='/img/samples/e3.jpg')
+          h4.lefty The best place to see in Winter season this year
+          a.lefty.cat-a.cat-label3(href='#') TOURISM
+          p.righty
+            span
+              i.fa.fa-clock-o
+              | 20 Jan 2014
+        .tn-small-1.blocky
+          a(href='#')
+            img.lefty(alt='', src='/img/samples/e4.jpg')
+          h4.lefty New phone - people love it and sales are closed
+          a.lefty.cat-a.cat-label5(href='#') tech
+          p.righty
+            span
+              i.fa.fa-clock-o
+              | 20 Jan 2014
+      //
+         Sec 1 
+      .news-sec-1.float-width
+        .float-width.sec-cont2
+          h3.sec-title MUSIC NEWS
+          .sec-1-big.float-width
+            img.blocky(alt='', src='/img/samples/z1.jpg')
+            .sec-1-big-text.lefty
+              h3 Famous artist share his tracks for free
+              h6
+                span
+                  i.fa.fa-user
+                  | John Doe
+                span
+                  i.fa.fa-clock-o
+                  | 20 Jan 2014
+                span
+                  i.fa.fa-comment-o
+                  | 21 comments
+              p
+                | Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit amet, lobortis hendrerit nunc. Curabitur pharetra in velit at ornare. Pellentesque vitae nibh volutpat velit feugiat euismod ut a elit. Donec in felis rutrum risus bibendum cursus. Aliquam interdum aliquam elementum ...
+          .sec-1-sm
+            img.blocky(alt='', src='/img/samples/e5.jpg')
+            .sec-1-sm-text.blocky
+              h3 TOP 10 Pop track list past year
+              h6
+                span
+                  i.fa.fa-clock-o
+                  | 20 Jan 2014
+                span
+                  i.fa.fa-comment-o
+                  | 21 comments
+              p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+          .sec-1-sm
+            img.blocky(alt='', src='/img/samples/e6.jpg')
+            .sec-1-sm-text.blocky
+              h3 Another Hip-Hop rising star
+              h6
+                span
+                  i.fa.fa-clock-o
+                  | 20 Jan 2014
+                span
+                  i.fa.fa-comment-o
+                  | 21 comments
+              p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+          .sec-1-sm
+            img.blocky(alt='', src='/img/samples/e7.jpg')
+            .sec-1-sm-text.blocky
+              h3 New MP3 tracks are coming 
+              h6
+                span
+                  i.fa.fa-clock-o
+                  | 20 Jan 2014
+                span
+                  i.fa.fa-comment-o
+                  | 21 comments
+              p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+          .sec-1-sm
+            img.blocky(alt='', src='/img/samples/e8.jpg')
+            .sec-1-sm-text.blocky
+              h3 DJ Open Music Festival 2014
+              h6
+                span
+                  i.fa.fa-clock-o
+                  | 20 Jan 2014
+                span
+                  i.fa.fa-comment-o
+                  | 21 comments
+              p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+      //
+         News slider 
+      .qk-slider.float-width
+        h3.sldr-title slider
+        .flexslider.news-sldr
+          ul.slides
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s1.jpg')
+                h4
+                  a(href='#') Listen during running
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s2.jpg')
+                h4
+                  a(href='#') Cinemas are closed
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s3.jpg')
+                h4
+                  a(href='#') Best time to marry
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s4.jpg')
+                h4
+                  a(href='#') Winter is coming
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s1.jpg')
+                h4
+                  a(href='#') Listen during running
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s2.jpg')
+                h4
+                  a(href='#') Cinemas are closed
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s3.jpg')
+                h4
+                  a(href='#') Best time to marry
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+            li
+              .trans2.slide-sngl
+                a.text-center(href='#')
+                  img(alt='', src='/img/samples/s4.jpg')
+                h4
+                  a(href='#') Winter is coming
+                p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit ...
+                h6
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+      //
+         POLLS AND REVIEWS 
+      .news-sec-2.float-width
+        .float-width.sec-cont3
+          h3.sec-title TECHNOLOGY - POLLS AND REVIEWS
+          .polls-cont
+            .polls-left.blocky
+              a(href='#')
+                img.polls-bg-img(alt='', src='/img/samples/z4.jpg')
+              .pol-lft-txt
+                h4.float-width Pizza will be delivered by Drons
+                a.lefty(href='#')
+                  img(alt='', src='/img/4-stars.png')
+                h6.righty
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 21 comments
+                p.float-width
+                  | Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit amet, lobortis hendrerit nunc. Curabitur pharetra in velit at ornare. Pellentesque vitae nibh volutpat velit feugiat euismod ut a elit. Donec in felis rutrum risus bibendum cursus. Aliquam interdum aliquam elementum ...
+            .polls-right.lefty
+              .pol-rt-sm.float-width
+                a.lefty.pol-rt-img(href='#')
+                  img(alt='', src='/img/samples/m1.jpg')
+                h5 Pizza will be delivered by Drons
+                h6.lefty
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 21 comments
+                a.lefty.stars(href='#')
+                  img(alt='', src='/img/4-stars.png')
+              .pol-rt-sm.float-width
+                a.lefty.pol-rt-img(href='#')
+                  img(alt='', src='/img/samples/m2.jpg')
+                h5 YouTube as a real Television?
+                h6.lefty
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 21 comments
+                a.lefty.stars(href='#')
+                  img(alt='', src='/img/4-stars.png')
+              .pol-rt-sm.float-width
+                a.lefty.pol-rt-img(href='#')
+                  img(alt='', src='/img/samples/m3.jpg')
+                h5 Flying Mouse to your PC
+                h6.lefty
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 21 comments
+                a.lefty.stars(href='#')
+                  img(alt='', src='/img/4-stars.png')
+              .pol-rt-sm.float-width
+                a.lefty.pol-rt-img(href='#')
+                  img(alt='', src='/img/samples/m4.jpg')
+                h5 Best gadget ever on your hand
+                h6.lefty
+                  span
+                    i.fa.fa-clock-o
+                    | 20 Jan 2014
+                  span
+                    i.fa.fa-comment-o
+                    | 21 comments
+                a.lefty.stars(href='#')
+                  img(alt='', src='/img/4-stars.png')
+      //
+         Images news with slider 
+      .sm-gal-cont.float-width
+        h3.sec-title TOURISM - GALLERY
+        .sm-gal-bg
+          a(href='#')
+            img(alt='', src='/img/samples/z5.jpg')
+        .flexslider.img-sm-gal.righty
+          ul.slides
+            li
+              img(alt='', src='/img/samples/r1.jpg')
+              img(alt='', src='/img/samples/r5.jpg')
+            li
+              img(alt='', src='/img/samples/r2.jpg')
+              img(alt='', src='/img/samples/r6.jpg')
+            li
+              img(alt='', src='/img/samples/r3.jpg')
+              img(alt='', src='/img/samples/r7.jpg')
+            li
+              img(alt='', src='/img/samples/r4.jpg')
+              img(alt='', src='/img/samples/r8.jpg')
+            li
+              img(alt='', src='/img/samples/r1.jpg')
+              img(alt='', src='/img/samples/r5.jpg')
+            li
+              img(alt='', src='/img/samples/r2.jpg')
+              img(alt='', src='/img/samples/r6.jpg')
+            li
+              img(alt='', src='/img/samples/r3.jpg')
+              img(alt='', src='/img/samples/r7.jpg')
+            li
+              img(alt='', src='/img/samples/r4.jpg')
+              img(alt='', src='/img/samples/r8.jpg')
+            li
+              img(alt='', src='/img/samples/r1.jpg')
+              img(alt='', src='/img/samples/r5.jpg')
+            li
+              img(alt='', src='/img/samples/r2.jpg')
+              img(alt='', src='/img/samples/r6.jpg')
+            li
+              img(alt='', src='/img/samples/r3.jpg')
+              img(alt='', src='/img/samples/r7.jpg')
+            li
+              img(alt='', src='/img/samples/r4.jpg')
+              img(alt='', src='/img/samples/r8.jpg')
+            li
+              img(alt='', src='/img/samples/r1.jpg')
+              img(alt='', src='/img/samples/r5.jpg')
+            li
+              img(alt='', src='/img/samples/r2.jpg')
+              img(alt='', src='/img/samples/r6.jpg')
+            li
+              img(alt='', src='/img/samples/r3.jpg')
+              img(alt='', src='/img/samples/r7.jpg')
+            li
+              img(alt='', src='/img/samples/r4.jpg')
+              img(alt='', src='/img/samples/r8.jpg')
+      //
+         Videos Section 
+      .vid-gal.float-width
+        h3.sec-title TECHNOLOGY - VIDEOS
+        .vid-gal-bg.float-width
+          iframe(src='//player.vimeo.com/video/83714647', width='100%', height='387', frameborder='0', webkitallowfullscreen='webkitallowfullscreen', mozallowfullscreen='mozallowfullscreen', allowfullscreen='allowfullscreen')
+        .vid-thmb
+          ul.float-width
+            li
+              img(alt='', src='/img/samples/b1.jpg')
+            li
+              img(alt='', src='/img/samples/b2.jpg')
+            li
+              img(alt='', src='/img/samples/b3.jpg')
+            li
+              img(alt='', src='/img/samples/b4.jpg')
+    include main-right-side.jade
+    

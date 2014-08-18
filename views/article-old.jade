@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= title
+  each bullet, index in bullets
+    h3= (index + 1) + '. ' + bullet.text
+    img.img-rounded.img-responsive.img-placeholder(data-src="#{bullet.image.link}")

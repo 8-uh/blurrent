@@ -1,6 +1,5 @@
 var _ = require('lodash');
 var cards = require('./CardsDB');
-var imageSearch = require('./ImageSearch');
 
 var BulletPoint = function(question, answer, image) {
   this.question = question;
@@ -16,6 +15,7 @@ BulletPoint.prototype = {
     console.log(this.question.text, _.pluck(this.answers, 'text'), this.image, this.text);
   },
   init: function() {
+    console.log('creating new bullet point');
     // get more answers if we need them
     if(this.question.numAnswers > this.answers.length) {
       this.answers = this.answers.concat(cards.getAnswers(this.question.numAnswers -1));

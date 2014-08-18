@@ -1,10 +1,176 @@
 doctype html
-html
+html.no-js
   head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     title= title
-    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name='description', content='Magalla Magazine and News Template on Themeforest')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-theme.css')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/fonts/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='/css/responsive.css')
+    link(rel='stylesheet', href='/css/custom.css')
+    link(rel='stylesheet', href='/css/calendar.css')
+    //if gt IE 7
+      link(rel='stylesheet', type='text/css', href='css/ie.css')
+    script(src='/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js')
   body
+    //
+       Main Home Layout start 
+    //
+       Top toolbar 
+
+    .logo-top-ad
+      .container
+        .row
+          //
+             Magalla Logo 
+          .logo.col-lg-4
+            a(href='/') Blurrent
+          .top-banner.col-lg-8
+            //
+               Top ad banner 
+            a(href='#')
+              img(alt='', src='/img/top-banner.jpg')
+    //
+       Main Menu 
+    .main-menu
+      .container
+        .row
+          .col-lg-8
+            //
+               Main Menu 
+            ul#main-menu-items.sm.sm-menu.menu-efct
+              li.active
+                a(href='/') Home
+              li
+                a(href='#') Music
+              li
+                a(href='#') Magalla Pages
+                ul.main-menu-sub.sub-1st
+                  li
+                    a(href='home-1.html') Home
+                  li
+                    a(href='single-cat.html') Single Category
+                  li
+                    a(href='article.html') Article
+                  li
+                    a(href='portfolio.html') Portfolio
+                  li
+                    a(href='elements.html') Elements
+                  li
+                    a(href='contact.html') Contact us
+              li.mega-menu-li
+                a(href='#') Mega Menu
+                //
+                   Main Menu - Mega Menu 
+                ul.mega-menu.sub-1st
+                  li
+                    h3.sec-title MUSIC NEWS
+                    .sec-1-sm
+                      img.blocky(alt='', src='/img/samples/e5.jpg')
+                      .sec-1-sm-text.blocky
+                        h3 TOP 10 Pop track list past year
+                        h6
+                          span
+                            i.fa.fa-clock-o
+                            | 20 Jan 2014
+                          span
+                            i.fa.fa-comment-o
+                            | 21 comments
+                        p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+                    .sec-1-sm
+                      img.blocky(alt='', src='/img/samples/e6.jpg')
+                      .sec-1-sm-text.blocky
+                        h3 Another Hip-Hop rising star
+                        h6
+                          span
+                            i.fa.fa-clock-o
+                            | 20 Jan 2014
+                          span
+                            i.fa.fa-comment-o
+                            | 21 comments
+                        p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+                    .sec-1-sm
+                      img.blocky(alt='', src='/img/samples/e7.jpg')
+                      .sec-1-sm-text.blocky
+                        h3 New MP3 tracks are coming 
+                        h6
+                          span
+                            i.fa.fa-clock-o
+                            | 20 Jan 2014
+                          span
+                            i.fa.fa-comment-o
+                            | 21 comments
+                        p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+                    .sec-1-sm
+                      img.blocky(alt='', src='/img/samples/e8.jpg')
+                      .sec-1-sm-text.blocky
+                        h3 DJ Open Music Festival 2014
+                        h6
+                          span
+                            i.fa.fa-clock-o
+                            | 20 Jan 2014
+                          span
+                            i.fa.fa-comment-o
+                            | 21 comments
+                        p Suspendisse dapibus blandit auctor. Aenean nisl felis, fermentum in ante sit...
+              li
+                a(href='#') Games
+                ul.main-menu-sub.sub-1st
+                  li
+                    a(href='#') Top 100
+                  li
+                    a(href='#') Awards
+                  li
+                    a(href='#') Gameplays
+                    ul
+                      li
+                        a(href='#') Music Charts
+                      li
+                        a(href='#') Trending
+                      li
+                        a(href='#') Dance/Electronic
+                      li
+                        a(href='#') Articles
+                  li
+                    a(href='#') Music Charts
+                  li
+                    a(href='#') Trending
+                  li
+                    a(href='#') Dance/Electronic
+                  li
+                    a(href='#') Articles
+              li
+                a(href='#') Reviews
+          .col-lg-4.main-search-bar
+            //
+               Top Search bar 
+            form.navbar-form.float-width(role='search')
+              .form-group.float-width
+                input.form-control.float-width(type='text', placeholder='Search for games, music, movies')
+              a(href='#', type='submit')
+                i.fa.fa-search
+        //
+           Close the Fixed Menu button 
+        a#hidemenu.fxd-mnu-x.trans1(title='Close')
+          span.fa-stack.fa-lg
+            i.fa.fa-times.fa-stack-1x.fa-inverse
     block content
-    script(src="/javascripts/sloth.js")
-    script(src="/javascripts/client.js")
+    include footer.jade
+    script(src='/js/vendor/jquery-1.10.1.min.js')
+    script(src='/js/vendor/bootstrap.min.js')
+    script(src='/js/jquery.smartmenus.min.js')
+    script(src='/js/jquery.flexslider-min.js')
+    script(src='/js/newsTicker.js')
+    script(src='/js/jquery.customSelect.min.js')
+    script(src='/js/retina-1.1.0.min.js')
+    script(src='/js/jflickrfeed.min.js')
+    script(src='/js/calendar.js')
+    script(src='/js/placeholders.min.js')
+    script(src='/js/main.js')
+    script(src='/js/app/client.js')
+    

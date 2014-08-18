@@ -1,0 +1,166 @@
+extends layout
+
+block content
+  .container
+    .main-left-side
+      .artcl-main.float-width
+        .artcl-prev-nxt.float-width
+            .artcl-prev.w50.blocky
+              a(href='#')
+                i.fa.fa-angle-left
+                | PREV ARTICLE
+              p= article.slug
+            .artcl-nxt.w50.blocky.text-right
+              a(href='#')
+                | NEXT ARTICLE
+                i.fa.fa-angle-right
+              p Dont forget to hit play fast
+          .artcl-body.float-width
+            h2= article.title
+            h5
+              span
+                i.fa.fa-user
+                | John Doe
+              span
+                i.fa.fa-clock-o
+                | 20 Jan 2014
+              span
+                i.fa.fa-comment-o
+                | 21 comments
+            article.float-width.articl-data
+              img.article-heading(alt='', src="#{article.image.link}", data-width="#{article.image.image.width}", data-height="#{article.image.image.height}")
+              each bullet, index in article.bullets
+                p.col-md-12
+                  span= (index + 1) + '. ' + bullet.text
+                  br
+                  img.img-rounded.img-responsive.img-placeholder.bullet(src="#{bullet.image.link}")
+              
+        //
+           The Article Social Media Share 
+        .artcl-scl.float-width
+          .lefty.artcl-tags
+            h3 TAGS : 
+            ul
+              li
+                a(href='#') famous, 
+              li
+                a(href='#') artist, 
+              li
+                a(href='#') dj, 
+              li
+                a(href='#') hip hop, 
+              li
+                a(href='#') rap
+          .righty.artcl-shr
+            ul
+              li
+                .fb-share-button(data-href='http://developers.facebook.com/docs/plugins/', data-width='100', data-type='button')
+              li
+                a.twitter-share-button(href='https://twitter.com/share', data-count='none') Tweet
+              li
+                a(href='//www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fkentbrew%2F6851755809%2F&media=http%3A%2F%2Ffarm8.staticflickr.com%2F7027%2F6851755809_df5b2051c9_z.jpg&description=Next%20stop%3A%20Pinterest', data-pin-do='buttonPin', data-pin-config='none')
+                  img(alt='', src='//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png')
+        //
+           Article Comments Section 
+        .artcl-comments.float-width
+          h3.sec-title COMMENTS
+          .comments-section.float-width
+            .single-comment
+              img.blocky(alt='', src='/img/samples/t1.jpg')
+              .the-comment.lefty
+                h4
+                  span.comntr-nm.lefty Eiad Ashraf 
+                  span.cmnt-dt.lefty  at 14 July 2013
+                  a.righty(href='#')
+                    span.cmnt-reply Reply
+                p
+                  | Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.
+            .cmnt-dvdr
+            .single-comment.reply-1
+              img.blocky(alt='', src='/img/samples/t2.jpg')
+              .the-comment.lefty
+                h4
+                  span.comntr-nm.lefty Soza 
+                  span.cmnt-dt.lefty  at 14 July 2013
+                  a.righty(href='#')
+                    span.cmnt-reply Reply
+                p
+                  | Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.
+            .cmnt-dvdr
+            .single-comment.reply-1
+              img.blocky(alt='', src='/img/samples/t3.jpg')
+              .the-comment.lefty
+                h4
+                  span.comntr-nm.lefty Zoom 
+                  span.cmnt-dt.lefty  at 14 July 2013
+                  a.righty(href='#')
+                    span.cmnt-reply Reply
+                p
+                  | Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.
+            .cmnt-dvdr
+            .single-comment.reply-2
+              img.blocky(alt='', src='/img/samples/t4.jpg')
+              .the-comment.lefty
+                h4
+                  span.comntr-nm.lefty Ali Dawood 
+                  span.cmnt-dt.lefty  at 14 July 2013
+                  a.righty(href='#')
+                    span.cmnt-reply Reply
+                p
+                  | Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.
+            .cmnt-dvdr
+            .single-comment
+              img.blocky(alt='', src='/img/samples/t5.jpg')
+              .the-comment.lefty
+                h4
+                  span.comntr-nm.lefty Miri Drik 
+                  span.cmnt-dt.lefty  at 14 July 2013
+                  a.righty(href='#')
+                    span.cmnt-reply Reply
+                p
+                  | Praesent nec risus non tellus scelerisque congue eu eu purus. Aliquam id porta lacus. Morbi eleifend ultricies placerat. Nullam luctus lectus a risus congue scelerisque. In in fermentum nunc.
+          .cmnt-reply-form.float-width
+            h3.sec-title LEAVE A RESPONSE
+            form(role='form')
+              .form-group
+                input#exampleInputName.form-control(type='name', placeholder='Name or nickname')
+              .form-group
+                input#exampleInputEmail1.form-control(type='email', placeholder='E-mail')
+              .form-group
+                input#exampleInputWebsite.form-control(type='website', placeholder='Website (optional)')
+              textarea.form-control(rows='6', placeholder='Your comment')
+              a.cmnt-btn.trans2(href='#') POST YOUR COMMENT
+        //
+           related Articles  
+        .artcl-reltd.float-width
+          h3.sec-title RELATED POSTS
+          .reltd-sngl
+            img(alt='', src='/img/samples/e1.jpg')
+            .reltd-sngl-txt
+              h3 After party of Blondi Concert will begin tomorrow 
+              p
+                i.fa.fa-clock-o
+                | 20 Jan 2014
+          .reltd-sngl
+            img(alt='', src='/img/samples/e2.jpg')
+            .reltd-sngl-txt
+              h3 After party of Blondi Concert will begin tomorrow 
+              p
+                i.fa.fa-clock-o
+                | 20 Jan 2014
+          .reltd-sngl
+            img(alt='', src='/img/samples/e3.jpg')
+            .reltd-sngl-txt
+              h3 After party of Blondi Concert will begin tomorrow 
+              p
+                i.fa.fa-clock-o
+                | 20 Jan 2014
+          .reltd-sngl
+            img(alt='', src='/img/samples/e4.jpg')
+            .reltd-sngl-txt
+              h3 After party of Blondi Concert will begin tomorrow 
+              p
+                i.fa.fa-clock-o
+                | 20 Jan 2014
+
+    include main-right-side.jade
