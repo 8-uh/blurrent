@@ -63,4 +63,14 @@ router.get('/article/:id', function(req, res) {
     });
 });
 
+router.put('/markNSFW/:id', function(req, res) {
+  ArticleService.get(req.params.id).then(function(article) {
+    article.tags = ['nsfw'];
+    console.log('marking:', req.params.id,'as NSFW');
+    article.save(function(err) {
+      res.send('ok');
+    });
+  });
+});
+
 module.exports = router;

@@ -17,6 +17,7 @@ block content
               p= navArticles[1].title
           .artcl-body.float-width
             h2= article.title
+            button.righty.btn.btn-danger#nsfwBtn(data-src="#{article.slug}") Mark This Article NSFW
             article.float-width.articl-data
               img.article-heading(alt='', src="#{article.image.link}", data-width="#{article.image.image.width}", data-height="#{article.image.image.height}")
               each bullet, index in article.bullets
