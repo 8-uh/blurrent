@@ -6,7 +6,13 @@ var dirty = require('dirty');
 var Q = require('q');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/blurrent');
+mongoose.connect(process.env.MONGOLAB_URI, function(err) {
+  if(err) {
+    throw(err);
+  } else {
+    console.log('connected to mongo');
+  }
+});
 
 
 
