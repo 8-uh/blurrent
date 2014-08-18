@@ -1,6 +1,7 @@
 var Article = require('../models/article');
 var _ = require('lodash');
 var Q = require('q');
+var ImageService = require('./ImageService');
 
 
 
@@ -19,17 +20,26 @@ ArticleService.get = function(slug) {
 
 ArticleService.getRandom = function(numArticles, tag) {
   var deferred = Q.defer();
+  var ret = [];
   function parseArticles(err, articles) {
+    console.log('articles.length:', articles.length);
     if(err) {
       throw(err);
     }
-    console.log('got all articles:', articles.length);
-    if(articles.length < numArticles) {
+    ret = ret.concat(articles);
+    if(ret.length < numArticles) {
       console.log('too short');
-      deferred.resolve(articles);
+      Article.find({})
+      .where({tags:'general'})
+      .limit(numArticles-ret.length)
+      .exec(parseArticles);
     } else {
-      console.log('returning subset:', numArticles);
-      deferred.resolve(_.first(_.shuffle(articles),numArticles));
+      ret.forEach(function(article) {
+       if(!article.image) {
+        article.image = ImageService.dummy;
+       } 
+      });
+      deferred.resolve(_.shuffle(ret));
     }
   }
   console.log('looking for:', tag);
@@ -41,6 +51,9 @@ ArticleService.getRandom = function(numArticles, tag) {
     var rand = Math.floor(Math.random() * count);
     if(rand + numArticles > count) {
       rand = count - numArticles - rand;
+    }
+    if(rand < 0) {
+      rand = 0;
     }
     console.log('rand:', rand, numArticles, count);
     Article.find({})
