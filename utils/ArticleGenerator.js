@@ -57,12 +57,12 @@ var GREY_LINKERS = [
   'About'
 ];
 
-mongoose.connect('mongodb://localhost:27017/blurrent', function(err) {
+mongoose.connect(MONGOLABS_URI, function(err) {
   !!err ? console.log('errror connecting:', err) : null;
 
-  Card.find({type: 'A', tags: 'nerdy' },function(err, cards) {
+  Card.find({type: 'A', tags: 'general' },function(err, cards) {
     var bar = new ProgressBar(':bar :current/:total :percent', { total: cards.length});
-    Card.find({type: 'Q', tags: 'nerdy'}, function(e, qcards) {
+    Card.find({type: 'Q', tags: 'general'}, function(e, qcards) {
       cards.forEach(function(card) {
         var article = new Article();
         article.topic = card.text;
@@ -105,7 +105,7 @@ mongoose.connect('mongodb://localhost:27017/blurrent', function(err) {
           article.slug = slang.dasherize(article.title);
           article.hidden = false;
           article.created = new Date();
-          article.tags.push('nerdy');
+          article.tags.push('general');
           article.save(function(err) {
             if(err) { 
               throw(err);

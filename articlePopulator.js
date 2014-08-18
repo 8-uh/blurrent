@@ -8,7 +8,7 @@ var Card = require('./models/card');
 
 
 
-mongoose.connect('mongodb://localhost:27017/blurrent', function(err) {
+mongoose.connect(process.env.MONGOLABS_URI, function(err) {
   !!err ? console.log('errror connecting:', err) : null;
   Card.find({type: 'A' },function(err, cards) {
     var cardCount = 0;
