@@ -33,7 +33,19 @@ ArticleService.getRandom = function(numArticles, tag) {
     }
   }
   console.log('looking for:', tag);
-  Article.find({tags: tag}, parseArticles);
+  Article.count({tags: tag}, function(err, count) {
+    if(err) {
+      throw(err);
+    }
+    console.log('count:', count);
+    var rand = Math.floor(Math.random() * count);
+    Article.find({})
+    .where({tags:tag})
+    .limit(numArticles)
+    .skip(rand)
+    .exec(parseArticles);
+  });
+  
   
   return deferred.promise;
 };
