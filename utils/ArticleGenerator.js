@@ -21,7 +21,10 @@ var ADJECTIVES = [
   'Gruesome',
   'Insanely Insane',
   'Most Adorable',
-  'Unexpected'
+  'Unexpected',
+  'Awesome',
+  'Terrible',
+  
 ];
 
 var WHITE_NOUNS = [

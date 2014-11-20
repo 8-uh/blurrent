@@ -38,6 +38,15 @@ html.no-js
             ins.adsbygoogle(style='display: inline-block; width: 728px; height: 90px;', data-ad-client='ca-pub-3711512461711533', data-ad-slot='7248875316')
             script.
               (adsbygoogle = window.adsbygoogle || []).push({});
+            script.
+              ( function() {
+                if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+                var unit = {"calltype":"async[2]","publisher":"codevinsky","width":728,"height":90,"sid":"Chitika Default","color_site_link":"ff0000","color_text":"ff0000"};
+                var placement_id = window.CHITIKA.units.length;
+                window.CHITIKA.units.push(unit);
+                document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+            }());
+            script(type="text/javascript", src="//cdn.chitika.net/getads.js", async)
 
     //
        Main Menu 
