@@ -132,3 +132,7 @@ max-height: 40px;
 .boxgrid.caption h3 a, .boxgrid2.caption h3 a {
   font-size: 20px;
 }
+
+.ad-squisher .chitikaAdContainer {
+  float: left;
+}
